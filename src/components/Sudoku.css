@@ -1,0 +1,58 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .controls {
+    margin-bottom: 10px;
+  }
+  
+  .sudoku-board {
+    display: grid;
+    grid-template-rows: repeat(9, 40px);
+    gap: 2px;
+  }
+  
+  .sudoku-row {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    gap: 2px;
+  }
+  
+  .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    font-size: 18px;
+    font-family: monospace;
+    border: 1px solid #999;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cell.white {
+    background: white;
+  }
+  
+  .cell.blue {
+    background: #add8e6;
+  }
+  
+  .cell.green {
+    background: #90ee90;
+  }
+  
+  .cell.red {
+    background: #f08080;
+  }
+  
