@@ -30,17 +30,17 @@ const sampleSolution: Grid = [
     [5, 6, 8, 2, 9, 7, 3, 0, 4],
   ];
 
-export function getSudokuPuzzle(region: string): Grid {
+export function getSudokuPuzzle(): Grid {
   return samplePuzzle;
 }
 
-export function getSudokuSolution(region: string): Grid {
+export function getSudokuSolution(): Grid {
   return sampleSolution;
 }
 
 // Check if userInput matches solution 9x9 grid
 export function isPuzzleComplete(puzzle: Grid, userInput: Grid): boolean {
-  const solution = getSudokuSolution('');
+  const solution = getSudokuSolution();
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
       if (puzzle[i][j] === 0 && userInput[i][j] !== solution[i][j]) {

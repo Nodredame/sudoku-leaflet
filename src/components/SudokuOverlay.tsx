@@ -7,28 +7,28 @@ import { getSudokuPuzzle, getSudokuSolution, isPuzzleComplete } from '../utils/S
 
 type Props = {
     region: string;
-    puzzleId: string;
+    //puzzleId: string;
     onLeave: () => void;
     onSubmit: (region: string, completed: boolean, updatedInput: number[][]) => void;
     onRestart: (region: string) => void; // ✅ add this line
     initialInput: number[][];
 };  
 
-export default function SudokuOverlay({ region, puzzleId, onLeave, onSubmit, onRestart, initialInput }: Props) {
-    const puzzle = getSudokuPuzzle(puzzleId);
-    const solution = getSudokuSolution(puzzleId);
+export default function SudokuOverlay({region, onLeave, onSubmit, onRestart, initialInput }: Props) {
+    const puzzle = getSudokuPuzzle();
+    const solution = getSudokuSolution();
     const [userInput, setUserInput] = useState(initialInput);
     const [submitted, setSubmitted] = useState(false);
 
     const handleInput = (row: number, col: number, val: number) => {
     // Sanity puzzle check
-    if (puzzle[row][col] !== 0 || submitted) return;
-
-    const updated = userInput.map((r, ri) =>
-        r.map((v, ci) => (ri === row && ci === col ? val : v))
-    );
-    setUserInput(updated);
-};  
+        if (puzzle[row][col] !== 0 || submitted) return;
+        
+        const updated = userInput.map((r, ri) =>
+            r.map((v, ci) => (ri === row && ci === col ? val : v))
+        );
+        setUserInput(updated);
+    };  
 
 const handleSubmit = () => {
     const complete = isPuzzleComplete(puzzle, userInput); // move here

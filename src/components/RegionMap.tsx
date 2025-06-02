@@ -93,7 +93,7 @@ export default function RegionMap() {
             {selectedRegion && regionPoint && (
                 <SudokuOverlay
                 region={selectedRegion}
-                puzzleId={selectedRegion}
+               // puzzleId={selectedRegion}
                 onLeave={handleLeave}
                 onSubmit={handleSubmit}
                 onRestart={handleRestart}
