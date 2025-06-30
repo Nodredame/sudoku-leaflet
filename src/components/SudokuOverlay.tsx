@@ -10,7 +10,7 @@ type Props = {
     //puzzleId: string;
     onLeave: () => void;
     onSubmit: (region: string, completed: boolean, updatedInput: number[][]) => void;
-    onRestart: (region: string) => void; // ✅ add this line
+    onRestart: (region: string) => void;
     initialInput: number[][];
 };  
 
@@ -31,7 +31,7 @@ export default function SudokuOverlay({region, onLeave, onSubmit, onRestart, ini
     };  
 
 const handleSubmit = () => {
-    const complete = isPuzzleComplete(puzzle, userInput); // move here
+    const complete = isPuzzleComplete(puzzle, userInput);
     setSubmitted(true);
     onSubmit(region, complete, userInput);
 };  

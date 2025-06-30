@@ -13,7 +13,7 @@ type RegionPoint = {
 function getBalloonIcon(done: boolean) {
     return L.divIcon({
         className: 'custom-balloon',
-        html: done ? '🟢' : '🎈',
+        html: done ? 'Pass' : 'Fail',
         iconSize: [30, 30],
         iconAnchor: [15, 30],
     });
@@ -36,7 +36,7 @@ export default function RegionMarker({ point, isCompleted, onSelect }: MarkerPro
             map.setView([point.latitude, point.longitude], 5);
         } 
         else {
-            onSelect(null); // ← This is missing in your code
+            onSelect(null);
         }
     };
 
